@@ -1,6 +1,4 @@
 #include <string.h>
-char str[10]="\0";
-const int Button_Pin1 = 13;#include <string.h>
 char letter [10]="\0";
 char words[50]="\0";
 
@@ -65,5 +63,4 @@ void loop()
   }
   Read_from_Serial();
 }
-
 
