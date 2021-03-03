@@ -25,21 +25,13 @@ void decode_morse()
     {
       const char *A = Alphabets[i].c_str();
       strncat(words,A,1);
+      Serial.println(words);
       memset(&letter[0], 0, sizeof(letter)); //set the string back to zero
     
     }
   }
 }
 
-void Read_from_Serial()
-{
-  int Byte=Serial.read();
-  if (Byte==80||Byte==112)
-  {
-    Serial.println(words);
-    memset(&words[0], 0, sizeof(words)); //set the string back to zero
-  }
-}
 
 void loop()
 {
