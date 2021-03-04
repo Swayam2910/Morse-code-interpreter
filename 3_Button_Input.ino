@@ -53,6 +53,5 @@ void loop()
     delay(200);
     decode_morse();
   }
-  Read_from_Serial();
 }
 
