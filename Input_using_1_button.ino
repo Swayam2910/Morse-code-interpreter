@@ -1,8 +1,3 @@
-/*
-  PROGRAM TO DECIPHER MORSE CODE USING A PUSH BUTTON AND DISPLAY IT ON THE SERIAL MONITOR
-  DATE: 20 JANUARY 2017
-  AUTHORS: PINAKI SADHUKHAN AND PRIYANKA SADHUKHAN
-*/
 
 unsigned long signal_len,t1,t2;   //time for which button is pressed
 int inputPin = 2;                 //input pin for push button
