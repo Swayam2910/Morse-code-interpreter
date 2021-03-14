@@ -1,5 +1,5 @@
 #include <string.h>
-char letter [10]="\0";
+char letter [10]="\0";                        //strings initially set to null
 char words[50]="\0";
 
 
@@ -14,7 +14,7 @@ void setup()
   pinMode(Button_Pin1,INPUT); 
   pinMode(Button_Pin2,INPUT); 
   pinMode(Button_Pin3,INPUT); 
-  Serial.begin(9600);
+  Serial.begin(9600);                           // begin serial communication
 }
 
 void decode_morse()
@@ -23,10 +23,10 @@ void decode_morse()
   {
     if (Character[i]==letter)
     {
-      const char *A = Alphabets[i].c_str();
-      strncat(words,A,1);
-      Serial.println(words);
-      memset(&letter[0], 0, sizeof(letter)); //set the string back to zero
+      const char *A = Alphabets[i].c_str();     //to form a constant chracter variable A
+      strncat(words,A,1);                       // letters are joined to print the word
+      Serial.println(words); 
+      memset(&letter[0], 0, sizeof(letter));    //sets the letter variable back to null to input more letters
     
     }
   }
@@ -38,16 +38,16 @@ void loop()
   if (digitalRead(Button_Pin1)==HIGH)
   {
     Serial.print(".");
-    strncat(letter,".",1);
+    strncat(letter,".",1);                       //. is added to the variable letter
     delay(200);
   }
   else if (digitalRead(Button_Pin2)==HIGH)
   {
     Serial.print("-");
-    strncat(letter,"-",1);
+    strncat(letter,"-",1);                       //- is added to the variable letter
     delay(200);
   }
-  else if (digitalRead(Button_Pin3)==HIGH)
+  else if (digitalRead(Button_Pin3)==HIGH)        //pressed to decode the letter and print the word
   {
     Serial.println(" ");
     delay(200);
